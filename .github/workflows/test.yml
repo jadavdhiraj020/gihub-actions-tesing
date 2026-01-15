@@ -1,30 +1,17 @@
-name: Jobs Demo
+name: Steps Demo
 
 on: [push]
 
 jobs:
-  build:
-    name: Build Step
+  demo:
     runs-on: ubuntu-latest
-    steps:
-      - run: echo "Building..."
 
-  config:
-    name: config
-    runs-on: ubuntu-latest
     steps:
-      - run: echo "config..."
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-  test:
-    name: Test Step
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Testing..."
+      - name: Show files
+        run: ls
 
-  deploy:
-    name: deployed
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Deployed started..."
+      - name: Print message
+        run: echo "Steps executed successfully"
