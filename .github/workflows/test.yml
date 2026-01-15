@@ -1,9 +1,28 @@
-name: hello world
-on: [push]
+# name: Hello World
+
+# on: [push]
+
+# jobs:
+#   demo:
+#     runs-on: windows-latest
+
+#     steps:
+#       - name: Print Hello World
+#         run: echo "HELLO WORLD!"
+
+
+name: Hello world
+
+on:
+  - push
+
+
 jobs:
-  run-shell-command:
-    runs-on: window-latest
+  demo:
+    runs-on: windows-latest
+
     steps:
-      - name: print hello world
-        run: echo "HELLO WORLD!"
-      
+      - name: Printing Hello world...
+        run: echo "how are you guys. Hello world"
+
+
