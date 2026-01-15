@@ -15,30 +15,12 @@ jobs:
         run: ls
 
       - name: Print message
-        run: echo "Steps executed successfully"
+        run: echo "Steps executed"
 
       - name: Print env
         env:
-          MESSAGE: Hello World
+          MESSAGE: Hello World.com
         run: echo $MESSAGE
 
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "hello build..."
-      - uses: actions/upload-artifact@v4
-        with:
-          name: app
-          path: dist/
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: app
-      - run: echo "Deploying app..."
 
