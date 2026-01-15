@@ -1,10 +1,10 @@
 name: Hello World
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   demo:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Print Hello World
