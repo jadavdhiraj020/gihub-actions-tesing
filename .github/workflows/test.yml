@@ -4,10 +4,18 @@ on: [push]
 
 jobs:
   build:
+    needs: config
     name: Build Step
     runs-on: ubuntu-latest
     steps:
       - run: echo "Building..."
+
+  config:
+    needs: deploy
+    name: config
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "config..."
 
   test:
     name: Test Step
@@ -18,7 +26,7 @@ jobs:
 
   deploy:
     name: deployed
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - run: echo "Deployed started..."
