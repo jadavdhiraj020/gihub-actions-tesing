@@ -16,3 +16,9 @@ jobs:
 
       - name: Print message
         run: echo "Steps executed successfully"
+
+      - name: Print env
+        env:
+          MESSAGE: Hello World
+        run: echo $MESSAGE
+
